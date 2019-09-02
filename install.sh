@@ -22,10 +22,10 @@ set -e  # exit when any command fails
 set -x
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  sudo apt-get update
-  sudo apt-get install git virtualenv cmake python3 python3-dev python3-pip python3-setuptools python3-wheel
+  apt-get update
+  apt-get install git virtualenv cmake python3 python3-dev python3-pip python3-setuptools python3-wheel
   if [[ "$TRAVIS" ]]; then
-    sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${OS_PYTHON_VERSION} 10
+    update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${OS_PYTHON_VERSION} 10
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then  # Mac OSX
   brew install python3 gcc@7
